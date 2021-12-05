@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>JokeApp</title>
+</head>
+<body>
+
+
+<div>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/home">JokeApp</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/refreshMiscJokes">Rifresko </a></li>
+      </ul>
+    </div>
+  </nav>
+  <table class="table table-bordered">
+    <tr>
+      <thead class="thead-dark">
+      <th>Categoria</th>
+      <th>setupLine</th>
+      <th>PunchLine</th>
+
+      <th></th>
+      </thead>
+    </tr>
+
+    <tbody class="body">
+    <th:block th:each="twolinejoke : ${allMiscDarkJokes}">
+      <tr>
+        <td class="col-xl-2">[[${twolinejoke.category}]]</td>
+        <td class="col-xl-2">[[${twolinejoke.setupLine}]]</td>
+        <td class="col-xl-2">[[${twolinejoke.punchLine}]]</td>
+
+        <td>
+          <a class="h4 mr-3" th:href="@{'/miscJoke/delete' + ${twolinejoke.id}}">Fshij</a>
+        </td>
+
+    </th:block>
+    </tbody>
+
+  </table>
+</div>
+
+</body>
+</html>
